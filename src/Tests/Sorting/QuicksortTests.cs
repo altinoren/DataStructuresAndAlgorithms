@@ -1,4 +1,5 @@
-using Tests.Helper;
+using System;
+using System.Linq;
 using Sorting;
 using Xunit;
 
@@ -10,12 +11,29 @@ namespace Tests.Sorting
         [Fact]
         public void Can_Sort_Small_Array()
         {
-            var testArray = new int[] { 2, 3, 1 };
-            var expectedArray = new int[] { 1, 2, 3 };
+            var test = new int[] { 2, 3, 1 };
+            var expected = new int[] { 1, 2, 3 };
 
-            testArray.Quicksort();
+            test.Quicksort();
 
-            Assert.True(HelperMethods.AreIdentical(testArray, expectedArray));
+            Assert.True(Enumerable.SequenceEqual(test, expected));
+        }
+
+        [Fact]
+        public void Can_Sort_Large_Array()
+        {
+            var expected = new int[10000];
+            for (int i = 0; i < 10000; i++)
+            {
+                expected[i] = i;
+            }
+
+            var random = new Random();
+            var test = ((int[])expected.Clone()).OrderBy(x => random.Next()).ToArray();
+
+            test.Quicksort();
+
+            Assert.True(Enumerable.SequenceEqual(test, expected));
         }
     }
 }

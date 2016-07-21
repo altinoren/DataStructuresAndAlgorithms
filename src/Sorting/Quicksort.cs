@@ -25,25 +25,25 @@ namespace Sorting
             if (low < high)
             {
                 int p = Partition(array, low, high);
-                Quicksort(array, low, p - 1);
+                Quicksort(array, low, p);
                 Quicksort(array, p + 1, high);
             }
         }
 
+        // Using Hoare partition scheme
         private static int Partition(int[] array, int low, int high)
         {
-            var pivot = array[high];
-            var i = low;
-            for (int j = low; j < high -1; j++)
+            var pivot = array[low];
+            var i = low - 1;
+            var j = high + 1;
+            while (true)
             {
-                if (array[j] <= pivot)
-                {
-                    Swap(array, i, j);
-                    i++;
-                }
+                do i++; while (array[i] < pivot);
+                do j--; while (array[j] > pivot);
+                if (i >= j)
+                    return j;
+                Swap(array, i, j);
             }
-            Swap(array, i, high);
-            return i;
         }
 
         private static void Swap(int[] array, int i, int j)
