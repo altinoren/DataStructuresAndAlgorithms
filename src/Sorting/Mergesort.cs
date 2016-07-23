@@ -12,10 +12,10 @@ namespace Sorting
         /// a linked list, a sequentially accessed data structure.
         /// </summary>
         /// <best>
-        /// O(n) or O(n log n)
+        /// O(n log n)
         /// </best>
         /// <worst>
-        /// O(n^2)
+        /// O(n log n)
         /// </worst>
         public static void Mergesort(this int[] array)
         {
