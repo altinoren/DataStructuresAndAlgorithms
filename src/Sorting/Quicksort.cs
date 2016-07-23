@@ -4,7 +4,8 @@ namespace Sorting
     {
         /// <summary>
         /// A comparison sort algorithm usually two or three times faster than
-        /// <see cref="Sorting.Mergesort"/> or <see cref="Sorting.Heapsort"/>
+        /// <see cref="Sorting.Mergesort"/> or <see cref="Sorting.Heapsort"/>.
+        /// Not fast when sorting sequentially accessed data, such as a linked list.
         /// </summary>
         /// <best>
         /// O(n) or O(n log n)

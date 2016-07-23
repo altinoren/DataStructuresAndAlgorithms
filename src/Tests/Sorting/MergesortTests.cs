@@ -5,15 +5,15 @@ using Xunit;
 
 namespace Tests.Sorting
 {
-    public class QuicksortTests
+    public class MergesortTests
     {
         [Fact]
         public void Can_Sort_Small_Array()
         {
-            var test = new int[] { 2, 3, 1 };
-            var expected = new int[] { 1, 2, 3 };
+            var test = new int[] { 2, 3, 1, 4, 5, 6, 7 };
+            var expected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
 
-            test.Quicksort();
+            test.Mergesort();
 
             Assert.True(Enumerable.SequenceEqual(test, expected));
         }
@@ -30,7 +30,7 @@ namespace Tests.Sorting
             var random = new Random();
             var test = ((int[])expected.Clone()).OrderBy(x => random.Next()).ToArray();
 
-            test.Quicksort();
+            test.Mergesort();
 
             Assert.True(Enumerable.SequenceEqual(test, expected));
         }
