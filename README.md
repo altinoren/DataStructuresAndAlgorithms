@@ -11,3 +11,7 @@ The source is on .NET Core. Unit tests in xUnit are in the same project because 
 * Bubblesort
 * Selectionsort
 * Insertionsort
+
+## Implemented algorithms
+### Array
+* Rotate
