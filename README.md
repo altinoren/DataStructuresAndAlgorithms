@@ -15,3 +15,4 @@ The source is on .NET Core. Unit tests in xUnit are in the same project because 
 ## Implemented algorithms
 ### Array
 * Rotate
+* MaximumSubArraySum
