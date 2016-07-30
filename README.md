@@ -16,3 +16,4 @@ The source is on .NET Core. Unit tests in xUnit are in the same project because 
 ### Array
 * Rotate
 * MaximumSubArraySum
+* BinarySearch
